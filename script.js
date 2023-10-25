@@ -1,33 +1,31 @@
-let variable = 10
-variable = 20 //felül tudom írni az értékét
+let obj = {
+    key1: "value",
+    key2: 100,
+    key3: true,
+    key4: ["one", "two", "three", "four"],
+    key5: {
+        nestedKey: "nestedValue",
+        nestedKey2: 200,
+        nestedKey3: false,
+        nestedKey4: ["ein", "zwei", "drei"],
+        nestedKey5: {nestedKey: "hello"}
+    }
+}
+//console.log(obj.key4)
+//console.log(obj.key5.nestedKey5.nestedKey)
 
-const variable2 = 50 //nem tudom felülírni az értékét
+const objectKeys = Object.keys(obj)
+objectKeys.forEach((key) => {
+    console.log(obj[key])
+})
 
-let array = [1, 2, 3]
-array = [4, 5, 6]
-array.push(10) //belepusholja az arraybe a 10-et is
-
-const array2 = [10, 20, 30]
-//array2 = [40, 50, 60]  //nem írhatom felül
-array2.push(100)  //lefut
-
-//console.log(array2)
-
-const arr = ["kiss béla", "nagy józsi", "tóth jános"]
-for (let i = 0; i < arr.length; i++) {
-    //console.log(arr[i]) //megkapom külön sorban az arr elemeit
+for (let i = 0; i < obj.key4.length; i++) {
+   // console.log(obj.key4[i])
 }
 
-arr.forEach((value, index) => {
-   // console.log("at index: ", index, " is: ", value)
-    //console.log(`at index:  ${index}  is:  ${value}`) //template literal
-}) //ezzel is végig tudok menni az arrayen
+obj.key4.map((value) => {
+   // console.log(value)
+})
 
-arr.map((value, index) => {
-    //console.log(`at index:  ${index}  is:  ${value}`)
-}) //ugyanazt csinálja, mint a forEach, de a forEachnek nincs visszatérési értéke, amíg a map
 
-for (const value of arr) {
-   // console.log(`forof: ${value}`)
-}
 
